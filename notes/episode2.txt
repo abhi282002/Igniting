@@ -1,0 +1,57 @@
+NPM: NPM is a package manager used to manage the packages, it is a standard repository for all package managers. All the packages are hoisted on it, we can borrow these packages from npm and use them in our code.
+
+Parcel/Webpack: Parcel and Webpack are bundlers used to minify our JavaScript, HTML etc. Using parcel in our module will help us to include a development server automatically. Parcel also helps to host websites on HTTPs servers using the --https flag.
+
+.parcel-cache: parcel-cache in parcel track all information about your project when the parcel builds it so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch and the next build becomes faster the previous build. It's a key reason why parcels can be so fast in development mode.
+
+Role of Parcel:
+
+Hot reloading: When you make a change, Parcel automatically updates your code in the browser so no page reload is necessary.
+
+Diagnostics: If any unexpected error occurs in our code or configuration, Parcel displays beautiful diagnostics in your terminal and in the browser.
+
+Tree Shaking: Parcel support tree shaking, it continuously analyzes our code e.g. export and import module and removes all code that isn't used.
+
+Image optimization: Parcel supports resizing, converting and optimizing images.
+
+Compression: It compresses your app before deploying.
+
+Content hashing: Parcel automatically includes content hashes in the names of all output files, which enables long-term browser caching(storing all web resources locally on the user's browser so that if the user re-visits the website no need to re-download all resources again). It helps to reduce the loading time of web browsers so that our application becomes slightly faster.
+
+NPX: NPX is an NPM package runner, it helps the developers to execute all the NPM packages.
+
+Dependencies vs devDependencies
+
+Dependencies: Dependencies packages are those which are ready in the production build.
+
+Syntex: npm install package_name
+
+devDependencies: It is generally required in the development build or development time when we build our application:
+
+Syntex: npm install -D package_name
+
+HMR(Hot Replacement Module): HMR improves the development experience when any changes made in our code or packages it will automatically update the module in the web browser without refresh the whole page again. It will help to build our developement build very fast.
+
+.gitignore: Gitignore files specifies the git that you should not track this file or ignore the file, this files are not commited or push into the git. These files are re-generates files which can re-gererate letter in our module whenever we should need.
+
+package.json: package.json is configuration for npm file, it contain the approx verison of all the installed packages and dependencies. NPM take care of all the packages inside package.json.It also include meta information like scripts,author & license information,description,propertes.
+
+package-lock.json: package-lock.json contain the exact version of all installed dependencies or packages. If new version release of any package or dependencies then package.json file look like same but package-lock.json file log the original or latest version of the code in our app.
+
+Why should we not modify package-lock.json?
+
+Ans: package-lock.json file contain the exact version of dependencies, manually changes in this file will lead to the dependencies consistency problem because it desing to ensure that everyone working one project get the same package-lock.json file.
+
+Node Module: Node module file contain all the packages files or code that we fetch from the NPM at the time of installing dependencies and put into this files. Node module contain all the normal dependencies or devdependencies about packages including transitive depedencies.
+
+Node module files are to large and lots of thing present in this , but node module files will re-generated as package.json or package-lock.json present in our app so it not recommended to put Node Module file inside git.
+
+dist folder: When the developement build of project is completed parcel will parsed, minifying , compress and optimizing all the files or packages and put into the dist folder so that our app is ready for production build.
+
+browserlists: browserlists indicates which version of different-different web browser should be support your app.
+
+caret(^) and tilde(~) in package.json:
+
+caret: It is used to automatically updates the packages and installed as a minor version .
+
+tilde: It is used to update packages as a major version.
